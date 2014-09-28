@@ -48,6 +48,10 @@
 #include "stm32f10x_usart.h"
 #include "stm32f10x_wwdg.h"
 #include "misc.h" /* High level functions for NVIC and SysTick (add-on to CMSIS functions) */
+//////// Added by me for the FunctionalState ENABLE/DISABLED //////////
+#include "stm32f10x.h"
+
+
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
