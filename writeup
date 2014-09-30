@@ -12,9 +12,6 @@ Q2. What does the ENTRY command in the linker script do?
 The ENTRY command specifies where the program will begin executing.
 
 Q3. Where in the STM memory map are the three ELF segments placed (i.e. flash, sram, system memory)?
-From given linker file:
-Flash starts at 0x08000000, SRAM starts at 0x20000000, and System Memory is at 0x60000000.
-From STM32F103CB PDF memory map:
 SRAM starts at 0x200007D0 ends at 0x20000000
 Flash starts at 0x0801 FFFF and ends at 0x0800 0000
 System Memory starts at 0x1FFF F800 and ends at 0x1FFF F000 
@@ -22,5 +19,7 @@ System Memory starts at 0x1FFF F800 and ends at 0x1FFF F000
 Part 2: 4
 
 Q4. What role does the startup file (startup_stm32f10x_md.s) play?
+The startup file does some initialization, loads up the reset handler, and begins running the program you've loaded up.
 
 Q5. Can you get the red LED to flash? Why is this harder? This is a good example of some of the challenges you will face with embedded devices and why the reference manual/STM-examples are key.
+Yeah if I just change the first argument of the function call in line 49 of blinky.c to LED_RED it will flash.  So I guess it's not harder in my case because the STM-example I used for this included both red and green functionality.
